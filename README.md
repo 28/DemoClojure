@@ -1,15 +1,16 @@
 # DemoProject
 
-I'm an app. Or maybe I'm a library? I haven't decided yet. 
-
-The choice is up to you!
+My clojure demo project.
+Contains:
+	login
+	signin
 
 ## Usage
 
-FIXME
+Software architectures
 
 ## License
 
-Copyright © 2012 FIXME
+Copyright © 2012
 
 Distributed under the Eclipse Public License, the same as Clojure.
