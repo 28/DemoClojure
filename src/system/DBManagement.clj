@@ -1,16 +1,17 @@
-(ns system.DBManagement)
+;;This namespace handles communication with the database.
+(ns system.dbmanagement)
 
 (def db (atom {}))
 
 (defn add-to-db
   ""
   [firstname lastname username password email]
-  (swap! db assoc (keyword username) (atom 
-                                       {:username (ref username)
-                                        :password (ref password)
-                                        :email (ref email)
-                                        :firstname (ref firstname)
-                                        :lastname (ref lastname)})))
+  (swap! db assoc (keyword username) (ref 
+                                       {:username username
+                                        :password password
+                                        :email email
+                                        :firstname firstname
+                                        :lastname lastname})))
 
 (defn exists?
   ""
@@ -26,23 +27,14 @@
   (if 
     (not 
         (nil? comm))
-    @(@(@db (keyword username)) (keyword comm))  
+    (@(@db (keyword username)) (keyword comm))  
     (let
-      [u @(@(@db (keyword username)) :username)
-      f @(@(@db (keyword username)) :firstname)
-      l @(@(@db (keyword username)) :lastname)
-      e @(@(@db (keyword username)) :email)
-      p @(@(@db (keyword username)) :password)]
+      [u (@(@db (keyword username)) :username)
+      f  (@(@db (keyword username)) :firstname)
+      l  (@(@db (keyword username)) :lastname)
+      e  (@(@db (keyword username)) :email)
+      p  (@(@db (keyword username)) :password)]
       {:username u :password p :firstname f :lastname l :email e}
       )))
 
-
-
-
-
-
-
-
-
-
- 
+;;End of file system.dbmanagement

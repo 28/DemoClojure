@@ -1,6 +1,7 @@
-(ns system.Main
-  (:use system.DBManagement)
-  (:use system.SessionManagement))
+;;This is the business logic of the system.
+(ns system.main
+  (:use system.dbmanagement)
+  (:use system.sessionmanagement))
 
 (defn sign-up
   ""
@@ -27,5 +28,7 @@
 
 (defn form-ok?
   ""
-  []
+  [a & args]
   )
+
+;;End of file system.main

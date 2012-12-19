@@ -1,5 +1,7 @@
-(ns system.Console
-  (:use system.Main))
+;;This is a console GUI namespace.
+;;Will be replaced!
+(ns system.console
+  (:use system.main))
 
 (defn sign-console
   ""
@@ -26,7 +28,7 @@
       (if (= pf ps)
           (if (sign-up f l u pf e)
             (println "Succes!")
-            (println "NO!"))
+            (println "Failure!"))
         (println "Passwords dont match")))))
 
 (defn log-console
@@ -42,3 +44,5 @@
       (if (log-in u p)
         (println "Succes!")
         (println "Fail!")))))
+
+;;End of file system.console

@@ -4,10 +4,11 @@ My clojure demo project.
 Contains:
 	login
 	signin
+	music reproduction and saving
 
 ## Usage
 
-Software architectures
+Modern software architectures - application
 
 ## License
 

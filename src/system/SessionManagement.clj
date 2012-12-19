@@ -1,4 +1,5 @@
-(ns system.SessionManagement)
+;;This namespace contains controls the (log in) session.
+(ns system.sessionmanagement)
 
 (def session (atom {}))
 
@@ -24,3 +25,5 @@
   (if (contains? @session (keyword username))
     true
     false))
+
+;;End of file system.sessionmanagement
