@@ -2,12 +2,12 @@
 
 My clojure demo project.
 Contains:
-	log in \n
-	log out \n
-	sign in \n
-	music reproduction \n
-	crop 30s \n
-	save to file	
+	log in,
+	log out,
+	sign in,
+	music reproduction,
+	crop 30s,
+	save to file.
 
 ## Usage
 
