@@ -1,16 +1,51 @@
+;;Music control namespace
 (ns system.music
   (:import (java.io File)
            (javax.sound.sampled Clip AudioFormat AudioInputStream AudioSystem DataLine DataLine$Info AudioFileFormat AudioFileFormat$Type)))
 
-(def file (File. "src/Test.wav"))
-(def inputstream (AudioSystem/getAudioInputStream file))
-(def formata (. inputstream getFormat))
-(def info (DataLine$Info. Clip formata))
-(def clip (AudioSystem/getLine info))
-(. clip open inputstream)
-(. clip setFramePosition (/ (. clip getFrameLength) 2) )
-(def fileo (File. "src/Test1.wav"))
-(if 
-  (AudioSystem/isFileTypeSupported AudioFileFormat$Type/WAVE inputstream)
-  (AudioSystem/write inputstream AudioFileFormat$Type/WAVE fileo)
-  false)
+(defn play-sound
+  ""
+  [filename]
+  (let 
+    [file (File. filename)
+     inputstream (AudioSystem/getAudioInputStream file)
+     fileformat (. inputstream getFormat)
+     info (DataLine$Info. Clip fileformat)
+     clip (AudioSystem/getLine info)]
+  (do
+    (. clip open inputstream)
+    (. clip start))))
+
+(defn crop30s
+  ""
+  [filename targetfile]
+  (let
+    [file (File. filename)
+     fileformat (AudioSystem/getAudioFileFormat file)
+     audioformat (. fileformat getFormat)
+     inputstream (AudioSystem/getAudioInputStream file)
+     bytespersecond (int (* (. audioformat getFrameSize) (int (. audioformat getFrameRate))))
+     framestocopy (long (* 30 (int (. audioformat getFrameRate))))
+     shortstream (do
+                   (. inputstream skip (* 1 bytespersecond))
+                   (AudioInputStream. inputstream audioformat framestocopy))
+     outfile (File. targetfile)]
+    (AudioSystem/write shortstream (. fileformat getType) outfile)))
+
+(defn crop
+  ""
+  [filename targetfile startsecond secondstocut]
+  (let
+    [file (File. filename)
+     fileformat (AudioSystem/getAudioFileFormat file)
+     audioformat (. fileformat getFormat)
+     inputstream (AudioSystem/getAudioInputStream file)
+     bytespersecond (int (* (. audioformat getFrameSize) (int (. audioformat getFrameRate))))
+     framestocopy (long (* secondstocut (int (. audioformat getFrameRate))))
+     shortstream (do
+                   (. inputstream skip (* startsecond bytespersecond))
+                   (AudioInputStream. inputstream audioformat framestocopy))
+     outfile (File. targetfile)]
+    (AudioSystem/write shortstream (. fileformat getType) outfile)))
+
+;;End of file system.music

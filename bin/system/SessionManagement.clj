@@ -19,11 +19,4 @@
         true)
       false)))
 
-(defn logged?
-  ""
-  [username]
-  (if (contains? @session (keyword username))
-    true
-    false))
-
 ;;End of file system.sessionmanagement

@@ -45,4 +45,36 @@
         (println "Succes!")
         (println "Fail!")))))
 
+(defn play-console
+  ""
+  []
+  (do
+    (println "Enter path to file")
+    (let 
+      [file (read-line)]
+      (play file))))
+
+(defn crop-console
+  ""
+  []
+  (do
+    (println "Enter path to file")
+    (let
+      [file (read-line)
+       target (do
+                (println "Enter target path")
+                (read-line))
+       s (do
+           (println "Start second")
+           (read-line))
+       a (do
+           (println "Amount to cut")
+           (read-line))]
+      (if
+        (and 
+          (integer? s)
+          (integer? a))
+        (cropcomb file target s a)
+        (cropcomb file target nil nil)))))
+
 ;;End of file system.console

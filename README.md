@@ -2,9 +2,12 @@
 
 My clojure demo project.
 Contains:
-	login
-	signin
-	music reproduction and saving
+	log in \n
+	log out \n
+	sign in \n
+	music reproduction \n
+	crop 30s \n
+	save to file	
 
 ## Usage
 
