@@ -4,7 +4,7 @@
   (:use system.main))
 
 (defn sign-console
-  ""
+  "Displays sign in dialog."
   []
   (do
     (println "Enter your firstname")
@@ -31,8 +31,8 @@
             (println "Failure!"))
         (println "Passwords dont match")))))
 
-(defn log-console
-  ""
+(defn log-in-console
+  "Displays log in dialog."
   []
   (do
     (println "Enter username")
@@ -46,16 +46,27 @@
         (println "Fail!")))))
 
 (defn play-console
-  ""
+  "Displays play sound dialog."
   []
   (do
     (println "Enter path to file")
     (let 
-      [file (read-line)]
-      (play file))))
+      [file (read-line)
+       s (do
+           (println "Start second:")
+           (read-string (read-line)))
+       e (do
+           (println "Seconds to play:")
+           (read-string (read-line)))]
+      (if (and 
+          (integer? s)
+          (integer? e))
+        (play file s e)
+        (play file nil nil)))))
 
 (defn crop-console
-  ""
+  "Displays crop sound dialog.User can specify the crop 
+   length or just crop the first 30s."
   []
   (do
     (println "Enter path to file")
@@ -66,15 +77,27 @@
                 (read-line))
        s (do
            (println "Start second")
-           (read-line))
+           (read-string (read-line)))
        a (do
            (println "Amount to cut")
-           (read-line))]
+           (read-string (read-line)))]
       (if
         (and 
           (integer? s)
           (integer? a))
         (cropcomb file target s a)
         (cropcomb file target nil nil)))))
+
+(defn log-out-console
+  "Displays the log out dialog."
+  []
+  (do
+    (println "Enter username")
+    (let [username (read-line)]
+    (if (logged? username)
+      (do
+        (log-out username)
+        (println "You logged out."))
+      (println "You are not logged in!")))))
 
 ;;End of file system.console

@@ -41,8 +41,12 @@
 
 (defn play
   ""
-  [filename]
-  (play-sound filename))
+  [filename s e]
+ (if
+    (and (nil? s)
+          (nil? e))
+      (play-sound filename)
+      (play-sound-part filename s e)))
 
 (defn cropcomb
   ""

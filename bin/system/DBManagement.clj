@@ -4,7 +4,8 @@
 (def db (atom {}))
 
 (defn add-to-db
-  ""
+  "Adds a new user to database which is a atom.The function
+   takes user attributes as parameters."
   [firstname lastname username password email]
   (swap! db assoc (keyword username) (ref 
                                        {:username username

@@ -16,6 +16,24 @@
     (. clip open inputstream)
     (. clip start))))
 
+(defn play-sound-part
+  ""
+  [filename startsecond secondtoplay]
+  (let
+    [file (File. filename)
+     inputstream (AudioSystem/getAudioInputStream file)
+     audioformat (. (AudioSystem/getAudioFileFormat file) getFormat)
+     info (DataLine$Info. Clip audioformat)
+     clip (AudioSystem/getLine info)
+     bytespersecond (int (* (. audioformat getFrameSize) (int (. audioformat getFrameRate))))
+     framestoplay (long (* secondtoplay (int (. audioformat getFrameRate))))
+     newstream (do
+                 (. inputstream skip (* startsecond bytespersecond))
+                 (AudioInputStream. inputstream audioformat framestoplay))]
+    (do
+      (. clip open newstream)
+      (. clip start))))
+
 (defn crop30s
   ""
   [filename targetfile]

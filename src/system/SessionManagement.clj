@@ -11,12 +11,6 @@
 (defn remove-from-session
   ""
   [username]
-  (if (empty? @session) 
-    false
-    (if (contains? @session (keyword username))
-      (do
-        (swap! session dissoc (keyword username))
-        true)
-      false)))
+  (swap! session dissoc (keyword username)))
 
 ;;End of file system.sessionmanagement
