@@ -4,7 +4,7 @@
            (javax.sound.sampled Clip AudioFormat AudioInputStream AudioSystem DataLine DataLine$Info AudioFileFormat AudioFileFormat$Type)))
 
 (defn play-sound
-  ""
+  "Plays the given wave file."
   [filename]
   (let 
     [file (File. filename)
@@ -17,7 +17,8 @@
     (. clip start))))
 
 (defn play-sound-part
-  ""
+  "Playes a part of given wave file specified by 
+   startsecond and secondtoplay parameters."
   [filename startsecond secondtoplay]
   (let
     [file (File. filename)
@@ -35,7 +36,7 @@
       (. clip start))))
 
 (defn crop30s
-  ""
+  "Returns a wave file that contains the first 30s of the given file."
   [filename targetfile]
   (let
     [file (File. filename)
@@ -51,7 +52,8 @@
     (AudioSystem/write shortstream (. fileformat getType) outfile)))
 
 (defn crop
-  ""
+  "Returns a croped wave file.Amount to crop is specified by the
+   startsecond and secondtocut parameters."
   [filename targetfile startsecond secondstocut]
   (let
     [file (File. filename)

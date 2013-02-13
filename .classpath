@@ -22,7 +22,11 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="ccw.LEININGEN_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="ccw.LEININGEN_CONTAINER">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="democlojure/target/native/windows/x86"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="classes"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
