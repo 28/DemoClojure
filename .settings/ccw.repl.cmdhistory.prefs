@@ -1,2 +1,0 @@
-cmdhistory=["(every? form-ok? [\\"a\\" \\"a\\"])" "(every? form-ok? [\\"a\\" \\"1\\"])" "(every? form-ok? [\\"a\\" \\"\\"])" "(every? form-ok? [\\"a\\" \\"\\"\\n                  s])"]
-eclipse.preferences.version=1
