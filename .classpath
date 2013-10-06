@@ -27,6 +27,5 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="democlojure/target/native/windows/x86"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="classes"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

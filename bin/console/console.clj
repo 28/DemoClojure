@@ -103,5 +103,3 @@
         (log-out username)
         (println "You logged out."))
       (println "You are not logged in!")))))
-
-;;End of file console.console

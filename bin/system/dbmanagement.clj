@@ -37,7 +37,4 @@
       l  (@(@db (keyword username)) :lastname)
       e  (@(@db (keyword username)) :email)
       p  (@(@db (keyword username)) :password)]
-      {:username u :password p :firstname f :lastname l :email e}
-      )))
-
-;;End of file system.dbmanagement
+      {:username u :password p :firstname f :lastname l :email e})))

@@ -67,5 +67,3 @@
                    (AudioInputStream. inputstream audioformat framestocopy))
      outfile (File. targetfile)]
     (AudioSystem/write shortstream (. fileformat getType) outfile)))
-
-;;End of file system.music

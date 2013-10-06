@@ -1,15 +1,20 @@
 # democlojure
 
-This is a simple demo clojure application(desktop version) for cropping 
-wave songs that also has a user and user session management.The development
-of this project is stopped(except for some minor adjustments).The Web version
-of this application is developing and it is <a href="https://github.com/28/ringit.git">here</a>.
-This app is made for a Modern software architectures subject on Faculty of organizational sciences.
+This is a simple console application for creating and storing ringtones 
+written in Clojure. It's called democlojure(for a lack of a better name)
+because it's my first Clojure application.
+
+The further development of this application is stopped except for maybe
+some minor adjustments.
+
+Web version of this is the application <strong>ringIt</strong> which is 
+in development and it is <a href="https://github.com/28/ringit">here</a>.
 
 ## Usage
 
-To use, simply start a REPL session and run console.clj.From there
-type the command for a dialog you want to be opened.
+1. Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>;
+2. Install <a href="http://leiningen.org/">Leiningen</a>;
+3. Start a REPL session and load <code>console.clj</code> namespace.
 
 ## License
 

@@ -11,6 +11,4 @@
 (defn remove-from-session
   "Removes the username from session."
   [username]
-  (swap! session dissoc (keyword username)))
-
-;;End of file system.sessionmanagement
+  (reset! session {}))
