@@ -19,6 +19,6 @@ in development and it is <a href="https://github.com/28/ringit">here</a>.
 
 ## License
 
-Copyright © 2013
-
 Distributed under the Eclipse Public License, the same as Clojure.
+
+Copyright &copy; democlojure 2013.
