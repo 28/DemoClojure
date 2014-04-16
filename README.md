@@ -13,9 +13,7 @@ in development and it is <a href="https://github.com/28/ringit">here</a>.
 
 ## Usage
 
-1. Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>;
-2. Install <a href="http://leiningen.org/">Leiningen</a>;
-3. Start a REPL session and load <code>console.clj</code> namespace.
+Start a REPL session and load <code>console.clj</code> namespace.
 
 ## License
 
