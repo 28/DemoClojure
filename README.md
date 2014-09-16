@@ -8,12 +8,9 @@ because it's my first Clojure application and it was my first Clojure assignment
 The further development of this application is stopped except for maybe
 some minor adjustments.
 
-Web version of this is the application <strong>ringIt</strong> which is 
-in development and it is <a href="https://github.com/28/ringit">here</a>.
-
 ## Usage
 
-Start a REPL session and load <code>console.clj</code> namespace.
+Using <a href="http://leiningen.org/">Leiningen</a> run <code>lein repl</code> in the project folder.
 
 ## License
 
