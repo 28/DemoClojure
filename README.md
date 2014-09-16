@@ -1,5 +1,7 @@
 # democlojure
 
+Version: 1.0.0
+
 This is a simple console application for creating and storing ring tones 
 written in Clojure. This is actually a simulation of the console app(like in terminal or cmd). 
 It's called democlojure(for a lack of a better name)
