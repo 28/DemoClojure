@@ -48,7 +48,9 @@
 (defn play-console
   "Displays play sound dialog."
   []
-    (println "Enter path to file")
+  (if
+    (logged? nil)
+    (do (println "Enter path to file")
     (let 
       [file (read-line)
        s (do
@@ -63,11 +65,15 @@
           (integer? e))
         (play file s e)
         (play file nil nil))))
+    (println "You are not logged in!")))
 
 (defn crop-console
   "Displays crop sound dialog.User can specify the crop 
    length or just crop the first 30s."
   []
+  (if
+    (logged? nil)
+    (do
     (println "Enter path to file")
     (let
       [file (read-line)
@@ -86,6 +92,7 @@
           (integer? a))
         (cropcomb file target s a)
         (cropcomb file target nil nil))))
+    (println "You are not logged in!")))
 
 (defn log-out-console
   "Displays the log out dialog."
